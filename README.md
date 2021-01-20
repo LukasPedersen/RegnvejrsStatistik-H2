@@ -29,6 +29,9 @@ And display it in a table
 
 
 ### *ChangeLog*  
-####  v0.0.2
+####  v0.0.1
 1. Made ReedMe file
-2. Made Class Calculate()
+2. Made Class Calculate()  
+####  v0.1.0
+1. Basic menu has been made and user can now input infomation
+2. Wrote some inline comments
