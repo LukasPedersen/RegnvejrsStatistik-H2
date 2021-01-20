@@ -15,13 +15,14 @@ namespace RegnvejrsStatistik
         }
         public static void Menu()
         {
-            int NumberOfDays;
-            List<string> ValueOfEachDay = new List<string>();
+            int NumberOfDays = 0;
+            List<double> ValueOfEachDay = new List<double>();
+            ValueOfEachDay.Clear();
             Console.Clear();
-            WriteToConsole("Hello and welcome", 50);
+            WriteToConsole("Hello and welcome", 30);
             WriteToConsole("...", 400);
             Console.Clear();
-            WriteToConsole("How many days do you want to work with?\n", 50);
+            WriteToConsole("How many days do you want to work with?\n", 30);
             //Check if input is a int and not to large
             try
             {
@@ -30,16 +31,16 @@ namespace RegnvejrsStatistik
             catch (Exception e)
             {
                 Console.Clear();
-                WriteToConsole("An error occurred remember to input a numer between 0 and 65535\n", 50);
-                WriteToConsole("Error meassage: ", 50);
+                WriteToConsole("An error occurred remember to input a numer between 0 and 65535\n", 30);
+                WriteToConsole("Error meassage: ", 30);
                 Console.WriteLine(e.Message);
-                WriteToConsole("Press any key to return", 50);
+                WriteToConsole("Press any key to return", 30);
                 Console.ReadKey();
                 Menu();
                 throw;
             }
             Console.Clear();
-            WriteToConsole($"You chose to work with: {NumberOfDays} days is this correct?\n Y/N", 50);
+            WriteToConsole($"You chose to work with: {NumberOfDays} days is this correct?\n Y/N", 30);
             string key = Console.ReadKey().KeyChar.ToString();
             Console.Clear();
             switch (key)
@@ -47,28 +48,24 @@ namespace RegnvejrsStatistik
                 case "y":
                     break;
                 case "n":
-                    WriteToConsole("Okey we will try again", 50);
+                    WriteToConsole("Okey we will try again", 30);
                     WriteToConsole("...", 400);
                     Menu();
                     break;
                 default:
-                    WriteToConsole("Please input an y for yes or an n for no", 50);
+                    WriteToConsole("Please input an y for yes or an n for no", 30);
                     Console.ReadKey();
                     Menu();
                     break;
             }
             for (int i = 1; i <= NumberOfDays; i++)
             {
-                WriteToConsole($"How much rainfall in mm was there on day: {i}\n", 50);
-                string value = Console.ReadLine();
-                ValueOfEachDay.Add($"Day {i}:{value}");
+                WriteToConsole($"How much rainfall in mm was there on day: {i}\n", 30);
+                double value = Convert.ToDouble(Console.ReadLine());
+                ValueOfEachDay.Add(value);
                 Console.Clear();
             }
-            foreach (string value in ValueOfEachDay)
-            {
-                Console.WriteLine(value.ToString());
-            }
-            Console.ReadKey();
+            Calculate.SelectionMenu(NumberOfDays, ValueOfEachDay);
         }
         /// <summary>
         /// Writes each char from input text and makes a little pause
