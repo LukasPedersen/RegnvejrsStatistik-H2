@@ -13,7 +13,8 @@ When all data is filled is the program will calculate
 And display it in a table  
 
 #### *Infomation*  
-**~~Insert Github link~~**
+**Link to Github: https://github.com/LukasPedersen/RegnvejrsStatistik-H2**  
+![example image](https://avatars3.githubusercontent.com/u/61869988?s=400&u=74e77d48ce80143ad77f2dafa0d3528286437f0e&v=4")
 
 
 
@@ -25,4 +26,9 @@ And display it in a table
 
 
 
-#### *ChangeLog*  
+
+
+### *ChangeLog*  
+####  v0.0.2
+1. Made ReedMe file
+2. Made Class Calculate()
